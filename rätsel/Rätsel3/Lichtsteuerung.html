@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lichtsteuerung hacken</title>
+    <link rel="stylesheet" href="Lichtsteuerung.css">
+</head>
+<body>
+
+    <h1>Lichtsteuerung hacken</h1>
+
+    <div class="story">
+        <p>Vor dir befindet sich ein Schaltpult mit drei logischen Tabellen. Du musst herausfinden, welche Schaltung verwendet wurde, um das Licht zu steuern. Das richtige Symbol ist unter den Tabellen zu sehen.</p>
+    </div>
+
+    <div class="table-container">
+        <div class="content">
+            <div class="truth-table">
+                <h3>AND</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>1</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="truth-table">
+                <h3>OR</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td>0</td></tr>
+                        <tr><td>0</td><td>1</td><td>1</td></tr>
+                        <tr><td>1</td><td>0</td><td>1</td></tr>
+                        <tr><td>1</td><td>1</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="truth-table">
+                <h3>NOR</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>A</th>
+                            <th>B</th>
+                            <th>Y</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>0</td><td>0</td><td>1</td></tr>
+                        <tr><td>0</td><td>1</td><td>0</td></tr>
+                        <tr><td>1</td><td>0</td><td>0</td></tr>
+                        <tr><td>1</td><td>1</td><td>0</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="switch-symbol">
+            ≥1
+        </div>
+    </div>
+
+    <input type="text" id="userInput" placeholder='Welche Schaltung ist gesucht?'>
+    <button class="buttonN" onclick="checkInput()">Überprüfen</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div>
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="goBack()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <scrpit src="Lichtsteuerung.js"></scrpit>
+
+</body>
+</html>

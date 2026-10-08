@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dunkler Hintergrund */
+    color: #ffffff; /* Helle Schriftfarbe */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #1e1e1e; /* Dunkler Container-Hintergrund */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Dunklerer Schatten */
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ffffff; /* Helle Schriftfarbe für Überschrift */
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #444; /* Dunklerer Rand */
+    border-radius: 5px;
+    background-color: #333; /* Dunkler Hintergrund für Eingabefelder */
+    color: #ffffff; /* Helle Schriftfarbe für Eingabefelder */
+}
+
+input::placeholder {
+    color: #bbb; /* Helle Farbe für Platzhaltertext */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c; /* Heller Grünton für den Button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c; /* Dunklerer Grünton beim Hover */
+}
+
+p {
+    color: #bbb; /* Helle Farbe für den Text */
+}
+
+a {
+    color: #5cb85c; /* Heller Grünton für Links */
+    text-decoration: none; /* Unterstreichung entfernen */
+}
+
+a:hover {
+    text-decoration: underline; /* Unterstreichung beim Hover */
+}
+
+b {
+    cursor: pointer; /* Zeiger-Cursor für die <b>-Tags */
+    color: #5cb85c; /* Optional: Helle Farbe für den Text */
+}
+
+b:hover {
+    text-decoration: underline; /* Unterstreichung beim Hover */
+}
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenbankabfrage</title>
+    <link rel="stylesheet" href="Datenbankabfrage.css">
+</head>
+<body>
+
+    <h1>Datenbankabfrage durchführen</h1>
+
+    <div class="story">
+        <p>Du hast Zugang zu einem Terminal, das mit der Sicherheitsdatenbank verbunden ist. Die Tür zum Büro wird nur geöffnet, wenn du die richtige SQL-Abfrage ausführst, um den Code zu finden. Die Tabelle heißt: "Räume".</p>
+    </div>
+
+    <div class="puzzle-container">
+        <table class="database-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Raum</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Server</td>
+                    <td>8392</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lager</td>
+                    <td>5291</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Büro</td>
+                    <td>6745</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="text" id="sqlQuery" placeholder='SQL-Befehl z.B: SELECT...'>
+        <button onclick="executeQuery()">Abfrage ausführen</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <div class="inventory">
+        <span class="inventory-item" id="inventory">Inventar: </span>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div>
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="goBack()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const correctQuery = 'SELECT Code FROM Räume WHERE Raum = "Büro"'; // Beispiel für die korrekte SQL-Abfrage
+
+        function executeQuery() {
+            const userInput = document.getElementById("sqlQuery").value;
+            const resultMessage = document.getElementById("resultMessage");
+            const modalMessage = document.getElementById("modalMessage");
+            const modal = document.getElementById("myModal");
+            const closeButton = document.getElementById("closeButton");
+            const backButton = document.getElementById("backButton");
+            const separator = document.getElementById("separator");
+
+            if (userInput.trim() === correctQuery) {
+                resultMessage.textContent = "Richtig!";
+                resultMessage.className = "result correct"; // Grüne Farbe
+                modalMessage.textContent = "Du gibst den Code ein und die Tür entsperrt sich.";
+                separator.style.display = "block"; // Trennstrich anzeigen
+                backButton.style.display = "block"; // Zurück-Button anzeigen
+            } else {
+                resultMessage.textContent = "Falsch!";
+                resultMessage.className = "result incorrect"; // Rote Farbe
+                modalMessage.textContent = "Versuch es noch einmal.";
+                backButton.style.display = "none"; // Zurück-Button ausblenden
+                separator.style.display = "none"; // Trennstrich ausblenden
+            }
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function goBack() {
+            closeModal();
+            // Hier kannst du die Logik hinzufügen, um zum Escape-Room zurückzukehren
+            alert("Weiter");
+        }
+
+        // Schließen des Modals, wenn der Benutzer außerhalb des Modals klickt
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

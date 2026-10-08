@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verschlüsselte Datei finden</title>
+    <link rel="stylesheet" href="Verschlüsselte-Datei.css">
+</head>
+<body>
+
+    <h1>Verschlüsselte Datei finden</h1>
+    <div class="story">
+        <p>Ein alter Computer ist noch eingeschaltet. Laut einer Notiz auf dem Tisch ist die Tür mit einer Datei auf diesem PC entsperrbar. Finde die richtige Datei in der Verzeichnisstruktur!</p>
+    </div>
+
+    <div class="puzzle-container">
+        <div class="folder" onclick="toggleFolder('system')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="folder-icon" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+            </svg>
+            System
+            <div id="system" class="folder-content">
+                <div class="file" onclick="checkFile('system_log.txt')">system_log.txt</div>
+                <div class="file" onclick="checkFile('error_report.txt')">error_report.txt</div>
+            </div>
+        </div>
+
+        <div class="folder" onclick="toggleFolder('documents')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="folder-icon" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+            </svg>
+            Dokumente
+            <div id="documents" class="folder-content">
+                <div class="file" onclick="checkFile('key.txt')">key.txt</div>
+                <div class="file" onclick="checkFile('notes.txt')">notes.txt</div>
+            </div>
+        </div>
+
+        <div class="folder" onclick="toggleFolder('logs')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="folder-icon" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+            </svg>
+            Logs
+            <div id="logs" class="folder-content">
+                <div class="file" onclick="checkFile('log_2023.txt')">log_2023.txt</div>
+                <div class="file" onclick="checkFile('error_log.txt')">error_log.txt</div>
+            </div>
+        </div>
+
+        <div class="folder" onclick="toggleFolder('private')">
+            <svg xmlns="http://www.w3.org/2000/svg" class="folder-icon" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+            </svg>
+            Private
+            <div id="private" class="folder-content">
+                <div class="file" onclick="checkFile('private_note.txt')">private_note.txt</div>
+                <div class="file" onclick="checkFile('secret.txt')">secret.txt</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="inventory">
+        <span class="inventory-item" id="inventory">Inventar: </span>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div>
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="goBack()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal1" class="modal">
+        <div class="modal-content1">
+            <span class="close" id="closeButton" onclick="closeModal1()">&times;</span>
+            <div id="fileContent"></div>
+        </div>
+    </div>
+
+    <div class="code-input">
+        <input type="text" id="codeInput" placeholder="Gib den Code ein...">
+        <button onclick="checkCode()">Überprüfen</button>
+        <div id="codeMessage" class="message"></div>
+    </div>
+
+    <script src="Verschlüsselte-Datei.js"></script>
+
+    </body> 
+</html>

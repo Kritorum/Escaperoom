@@ -1,0 +1,331 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Creepster&display=swap');
+ 
+body {
+    background-color: #0E0F11!important;
+    font-family: 'Roboto', sans-serif;
+}
+ 
+ 
+/*Navigations Bar*/
+ 
+.navbar {
+    background-color: #12141700 !important;
+}
+ 
+.bi.bi-box {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-top: 0%;
+}
+ 
+.navbar-brand {
+    color: #EAEAEA !important;
+	font-family: 'Special Elite', cursive !important;
+	margin-top: 1vw;
+	margin-left: 1vw;
+}
+ 
+/* Entfernt und im Menü-Dropdown ergänzt
+.nav.nav-pills {
+    width: 40%;
+    height: 10%;
+    font-family: 'Special Elite', cursive !important;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    margin-top: 0.5vw;
+    gap: 20px;
+}
+ 
+.nav-item {
+	background-color: #4A4E57;
+	border: none;
+	border-radius: 0.2vw;
+	width: 40%;
+}
+ 
+.nav-link {
+    color: #EAEAEA !important;
+}
+ 
+.nav-link:hover {
+    margin-top: -1%;
+}
+ 
+.nav-link.active {
+    background-color: #4A4E57 !important;
+    border-color: #121417 !important;
+}
+*/
+ 
+ 
+.logoS {
+    margin-left: 0.2vw !important;
+	margin-top: 0.5%;
+	font-size: 1.25vw;
+}
+
+/* Allgemeine Stile */
+body {
+    background-color: #0E0F11 !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+ 
+/* Login & Registrierung: Button oben rechts */
+.container-login {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-button {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    border: none;
+    background-color: #4A4E57;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5vw;
+    margin-right: 2vw;
+}
+
+.dropdown {
+    display: inline-block; /* Damit der Button und das Dropdown nebeneinander stehen */
+}
+
+.dropdown-content {
+    display: none; /* Standardmäßig versteckt */
+    position: absolute; /* Positioniert das Dropdown relativ zum Button */
+    background-color: #1e1e1e; /* Dunkler Hintergrund */
+    min-width: 160px; /* Mindestbreite des Dropdowns */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Schatten für das Dropdown */
+    z-index: 1; /* Über anderen Elementen anzeigen */
+}
+
+.dropdown-content a {
+    color: white; /* Schriftfarbe */
+    padding: 12px 16px; /* Innenabstand */
+    text-decoration: none; /* Unterstreichung entfernen */
+    display: block; /* Blockelement für Links */
+}
+
+.dropdown-content a:hover {
+    background-color: #5cb85c; /* Hintergrundfarbe beim Hover */
+}
+
+.round-button {
+    cursor: pointer; /* Zeiger-Cursor für den Button */
+}
+
+
+
+/* Responsives Design */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        padding: 3vw;
+    }
+}
+ 
+ 
+/*Menü (Funktioniert net und ich verzweifle)*/
+ 
+.menu-container {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+}
+ 
+.menu-icon {
+    color: white;
+    margin-right: 8px; /* Abstand zwischen Icon und Text */
+}
+ 
+.bi.bi-list {
+    width: 2vw;
+    height: 2vw;
+}
+ 
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: auto;
+    background-color: #0e0f1100;
+    font-family: 'Special Elite', cursive !important;
+    color: white;
+    text-align: left;
+	margin-left: -80vw;
+}
+ 
+.btna {
+    display: flex; /* Flexbox aktivieren */
+    align-items: center; /* Inhalte vertikal zentrieren */
+    justify-content: flex-start; /* Icon und Text linksbündig ausrichten */
+    background-color: #00000000 !important;
+    border: none !important;
+    background-image: none !important; /* Entfernt Dropdown-Pfeil */
+}
+ 
+.menu-icon:hover, .btna:hover {
+    color: #4A4E57;
+}
+ 
+.dropdown-item, .progress-item {
+    padding: 12px 16px;
+    cursor: pointer;
+}
+ 
+.dropdown-item:hover {
+    color: #4A4E57;
+}
+ 
+ 
+ 
+ 
+/*Menü ende*/
+ 
+.top {
+    background-color: #0E0F11!important;
+    height: 45vw;
+}
+ 
+.imgTop {
+    position: fixed;
+    top: 0vw;
+    float: left;
+}
+ 
+.titleP {
+    position: fixed;
+    top: 18vw;
+    left: 22vw;
+    text-transform: uppercase;
+    color: #E6E8EA !important;
+    font-size: 2.5rem;
+    font-family: 'Special Elite', cursive !important;
+    text-shadow: 2px 2px 4px #0E0F11, /* Leichter dunkler Schatten */
+                 -2px -2px 4px #1F2A37; /* Zweiter subtiler Schatten in Blau-Grau */
+    font-size: 8vw !important;
+}
+ 
+ 
+.bottom {
+    background-color: #0E0F11 !important;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    position: relative;
+}
+ 
+.arrow {
+    width: 2vw !important;
+    height: 2vw !important;
+    color: #e6e8ea8c !important;
+    margin-left: 45vw;
+    margin-top: 0.8vw;
+}
+ 
+.card {
+    display: inline-block !important;
+    margin-left: 10%;
+    margin-top: 7.5vw;
+    border: none !important;
+    background-color: #0E0F11 !important;
+}
+.card-body {
+    float: left;
+    width: 30%;
+    height: 31vw;
+    background-image: linear-gradient(to bottom, #414141, #1b1b1b) !important;
+    color: rgb(182, 182, 182) !important;
+    border-radius: 2%;
+    padding: 2% !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-title {
+    font-size: 1.5vw;
+}
+.bi, p, .btn{
+    float: left;
+}
+.bi, .pIcons {
+    margin-top: 0.5vw;
+}
+.bi {
+    width: 1.1vw;
+    height: 1.1vw;
+}
+.pIcons {
+    margin-left: 1.5%;
+    margin-right: 5%;
+    font-size: 0.75vw;
+}
+.card-text {
+    margin-top: 1.5vw;
+    font-size: 0.85vw;
+    font-weight: 4vw;
+}
+ 
+h3{
+    font-family: 'Special Elite', cursive;
+    text-shadow: 2px 2px 4px #2b2b2b, /* Leichter dunkler Schatten */
+                 -2px -2px 4px #2b2b2b; /* Zweiter subtiler Schatten in Blau-Grau */
+}
+ 
+.btnb {
+    background-image: linear-gradient(to bottom right, #303030, #000000) !important;
+    border-color: #1D2B2D !important;
+    font-size: 0.9vw !important;
+    margin-top: 2.5vw;
+    cursor: pointer !important;
+}
+.btn.btn-primary:hover {
+    margin-top: 2.6vw !important;
+}
+.card-img-top {
+    float: left;
+    width: 70% !important;
+    padding: 2%;
+    padding-left: 0%;
+    opacity: 60%;
+    background-color: #0E0F11 !important;
+}
+ 
+.accordion {
+    margin-top: 8vw;
+    width: 50vw;
+    margin-left: 20vw;
+    --bs-accordion-border-color: #090E18 !important;
+    --bs-accordion-btn-icon-width: 1.25vw !important;
+}
+.accordion-item {
+    border-color: #353535!important;
+    background-color: #000000 !important;
+}
+.accordion-button {
+    background-color: #353535 !important;
+    color: rgb(182, 182, 182) !important;
+    font-size: 0.85vw !important;
+}
+.accordion-body {
+    font-size: 0.8vw !important;
+    color: rgb(161, 161, 161) !important;
+}
+ 
+ 
+/* Funktioniert noch nicht */
+@media (max-width: 533px) {
+    .navbar, .top, .bottom {
+        opacity: 0% !important;
+        pointer-events: none; 
+        cursor: pointer;
+    }
+}
+	

@@ -1,0 +1,230 @@
+body {
+    background-color: #1a1a1a;
+    color: #00ff00; /* Grüne Schrift für das Terminal-Design */
+    font-family: 'Courier New', Courier, monospace; /* Monospace-Schriftart für Terminal-Style */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Verhindert Scrollen */
+}
+h1 {
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 2.1vw; /* Responsive Schriftgröße */
+}
+.story {
+    background-color: #222;
+    padding: 2.5vh; /* Responsive Padding */
+    border-radius: 10px;
+    margin: 0.8vh 0; /* Responsive Margin */
+    width: 80vw; /* Responsive Breite */
+    max-width: 600px; /* Maximale Breite */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 1.05vw;
+}
+.puzzle-container {
+    background-color: #333;
+    padding: 2.5vh; /* Responsive Padding */
+    border-radius: 10px;
+    margin: 0.8vh 0; /* Responsive Margin */
+    width: 80vw; /* Responsive Breite */
+    max-width: 600px; /* Maximale Breite */
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 1.05vw;
+    display: flex;
+    flex-wrap: wrap; /* Ordner nebeneinander anordnen */
+    justify-content: space-around; /* Platz zwischen den Ordnern */
+}
+.folder {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0.5vw; /* Margin für die Ordner */
+    display: flex;
+    flex-direction: column; /* Ordnerinhalt untereinander */
+    align-items: center; /* Zentriert den Inhalt */
+}
+.file {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 5px 0; /* Margin oben und unten für die Dateien */
+    display: block; /* Dateien untereinander anordnen */
+    padding-left: 20px; /* Einrückung für die Dateien */
+}
+.file:hover {
+    text-decoration: underline;
+}
+.folder-icon {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 5px; /* Abstand zwischen Icon und Ordnernamen */
+}
+.folder-content {
+    max-height: 0; /* Anfangs auf 0 setzen */
+    overflow: hidden; /* Verhindert das Anzeigen des Inhalts */
+    transition: max-height 0.3s ease; /* Übergang für max-height */
+    width: 100%; /* Breite anpassen */
+}
+.inventory {
+    position: fixed;
+    bottom: 2vh; /* Responsive Position */
+    left: 1vw; /* Responsive Position */
+    background-color: #444;
+    padding: 1.15vh 0.8vw; /* Responsive Padding */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.inventory-item {
+    margin-right: 10px;
+    font-size: 1vw; /* Responsive Schriftgröße */
+}
+/* Modal Styles */
+#myModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 2vh; /* Responsive Padding */
+    border: 1px solid #888;
+    width: 80vw; /* Responsive Breite */
+    max-width: 450px; /* Maximale Breite */
+    border-radius: 10px;
+    text-align: center;
+}
+button {
+    padding: 1.45vh 1.45vw; /* Responsive Padding */
+    font-size: 1.05vw; /* Responsive Schriftgröße */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1vh;
+}
+
+#myModal1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: Arial, sans-serif;
+    color: black;
+    animation: fadeIn 0.5s; /* Fade-In Animation */
+}
+.modal-content1 {
+    background-color: #f0f0f0; /* Hellgrau für Papieroptik */
+    margin: 10% auto;
+    padding: 1.5vw; /* Padding für das Modal */
+    border: 1px solid #888;
+    width: 80vw; /* Responsive Breite */
+    max-width: 600px; /* Maximale Breite */
+    border-radius: 10px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace; /* Monospace-Schriftart */
+    line-height: 1.5; /* Zeilenabstand */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Leichte Schattierung */
+}
+
+.result {
+    font-size: 2vw; /* Größerer Text */
+    font-weight: bold; /* Fettdruck */
+    margin: 1vw 0;
+}
+.correct {
+    color: #4CAF50; /* Grüne Farbe für richtig */
+}
+.incorrect {
+    color: #f44336; /* Rote Farbe für falsch */
+}
+#modalMessage {
+    font-size: 1.02vw;
+}
+.separator {
+    border-top: 1px solid #888;
+    margin: 1vw 0;
+    width: 100%;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.8vw; /* Responsive Schriftgröße */
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Zentrierung des Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+}
+.code-input {
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.code-input input {
+    padding: 0.8vw;
+    font-size: 1.02vw;
+    margin-bottom: 0.7vw;
+    border: 1px solid #fafafa; /* Weiße Umrandung */
+    border-radius: 5px;
+    width: 80%; /* Volle Breite */
+    max-width: 300px; /* Maximale Breite */
+    background-color: #222; /* Dunkler Hintergrund */
+    color: #ffffff; /* Weiße Schrift */
+}
+.code-input button {
+    padding: 1.3vh 1.7vw;
+    font-size: 1.2vw;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.code-input button:hover {
+    background-color: #45a049;
+}
+.message {
+    margin-top: 1vw;
+    color: #f44336; /* Rote Farbe für Fehlermeldungen */
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

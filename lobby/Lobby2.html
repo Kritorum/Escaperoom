@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Der Hausmeister</title>
+  <link rel="stylesheet" href="stylelobby2.css">
+ 
+  <script>
+    function showSection(section) {
+      document.querySelectorAll('.section').forEach(el => el.classList.add('hidden'));
+      document.getElementById(section).classList.remove('hidden');
+    }
+
+    function openPopup(id) {
+      document.getElementById(`popupOverlay${id}`).style.display = "flex";
+    }
+
+    function closePopup(event) {
+      if (event.target.classList.contains("overlay") || event.target.classList.contains("close-btn")) {
+          event.target.closest(".overlay").style.display = "none";
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <header>
+    Der Hausmeister
+  </header>
+ 
+  <div class="container">
+    <div class="sidebar">
+      <button onclick="showSection('story')">Story</button>
+      <button onclick="showSection('aufgaben')">Rätsel</button>
+      <button onclick="showSection('hilfe')">Hilfe</button>
+    </div>
+ 
+    <div class="main-content">
+      <div id="story" class="section">
+        <div class="section-title">Aktuelle Story</div>
+        <div class="story-content">
+          <div class="story-text">Absoluter Beispieltext...</div>
+        </div>
+      </div>
+ 
+      <div id="aufgaben" class="section hidden">
+        <div class="container-grid">
+          <div class="box click-box" style="background-image: url('bilder/rätsel1-binär');" onclick="openPopup(1)">
+            <h2 class="box-title">Rätsel 1</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(2)">
+            <h2 class="box-title">Rätsel 2</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(3)">
+            <h2 class="box-title">Rätsel 3</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(4)">
+            <h2 class="box-title">Rätsel 4</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(5)">
+            <h2 class="box-title">Rätsel 5</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(6)">
+            <h2 class="box-title">Rätsel 6</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(7)">
+            <h2 class="box-title">Rätsel 7</h2>
+          </div>
+          <div class="box click-box" style="background-image: url('#');" onclick="openPopup(8)">
+            <h2 class="box-title">Rätsel 8</h2>
+          </div>
+        </div>
+      </div>
+ 
+      <div id="hilfe" class="section hidden">
+        <div class="section-title">Hilfe</div>
+        <p>Hier können Sie Hilfestellungen und Tipps erhalten.</p>
+      </div>
+
+      <!-- Popups -->
+      <div class="overlay" id="popupOverlay1" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Rätsel 1</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay2" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Rätsel 2</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay3" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Rätsel 3</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay4" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Hier kommt dann die Story von Rätsel 4 und sowas rein...</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay5" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Hier kommt dann die Story von Rätsel 5 und sowas rein...</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay6" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Hier kommt dann die Story von Rätsel 6 und sowas rein...</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay7" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Hier kommt dann die Story von Rätsel 7 und sowas rein...</p>
+        </div>
+      </div>
+
+      <div class="overlay" id="popupOverlay8" onclick="closePopup(event)">
+        <div class="popup">
+          <span class="close-btn" onclick="closePopup(event)">&times;</span>
+          <p>Hier kommt dann die Story von Rätsel 8 und sowas rein...</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

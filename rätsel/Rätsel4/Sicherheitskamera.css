@@ -1,0 +1,187 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 1.8vh; /* Verwendung von vh für responsives Margin */
+}
+
+.story {
+    background-color: #222;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border-radius: 5px;
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 600px; /* Maximale Breite */
+    text-align: center;
+}
+
+.puzzle-container {
+    background-color: #333;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 600px; /* Maximale Breite */
+}
+
+.camera-icon {
+    width: 2.5vw; /* Verwendung von vw für die Breite */
+    height: auto;
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    fill: red; /* Standardfarbe für aktiv */
+    transition: fill 0.3s; /* Übergangseffekt für Farbwechsel */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    margin: 1vh 0; /* Verwendung von vh für Margin */
+    justify-content: center; /* Zentrieren der Label und Eingabefelder */
+}
+
+.input-label {
+    margin-right: 2vw; /* Abstand zwischen Label und Eingabefeld */
+    color: #ffffff; /* Label-Farbe */
+    width: 30%; /* Breite auf 30% gesetzt */
+    text-align: left; /* Links ausrichten */
+}
+
+.input-field {
+    margin-left: 1vw;
+    margin: 0.4vh;
+    padding: 1vh; /* Verwendung von vh für Padding */
+    font-size: 1.02vw; /* Verwendung von vw für Schriftgröße */
+    border: none;
+    border-radius: 5px;
+    width: 40%; /* Breite auf 60% gesetzt */
+    background-color: #444; /* Dunkler Hintergrund für Eingabefelder */
+    color: #ffffff; /* Textfarbe */
+}
+
+::placeholder {
+    color: #aaaaaa; /* Platzhalterfarbe */
+    text-align: left; /* Platzhalter linksbündig */
+}
+
+button {
+    padding: 1vh 1.5vw; /* Verwendung von vh und vw für Padding */
+    font-size: 1.2vw; /* Verwendung von vw für Schriftgröße */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2vh; /* Verwendung von vh für Margin */
+    margin-bottom: 1vh;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    margin-top: 2vh; /* Verwendung von vh für Margin */
+}
+
+.inventory {
+    position: fixed;
+    bottom: 2vh; /* Verwendung von vh für Position */
+    left: 2vw; /* Verwendung von vw für Position */
+    background-color: #444;
+    padding: 1.5vh; /* Verwendung von vh für Padding */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.inventory-item {
+    margin-right: 1vw; /* Abstand zwischen Inventar-Elementen */
+    font-size: 1.02vw; /* Verwendung von vw für Schriftgröße */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border: 1px solid #888;
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 500px; /* Maximale Breite */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Flexbox für vertikale Anordnung */
+    align-items: center; /* Zentrieren des Inhalts */
+}
+
+.result {
+    font-size: 2vw; /* Verwendung von vw für Schriftgröße */
+    font-weight: bold;
+    margin: 0;
+}
+
+.correct {
+    color: #4CAF50;
+}
+
+.incorrect {
+    color: #f44336;
+}
+
+.separator {
+    border-top: 1px solid #888;
+    margin: 1vh 0; /* Verwendung von vh für Margin */
+    width: 100%;
+}
+#modalMessage {
+    font-size: 1.02vw;
+    margin-top: 1vw;
+}
+#backButton {
+    margin: 0.3vh;
+    margin-bottom: 0.7vh;
+}
+
+.close {
+    color: #aaa;
+    font-size: 1vw; /* Verwendung von vw für Schriftgröße */
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto; /* Automatischer Margin, um den Button nach rechts zu schieben */
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh; /* Verwendung von vh für Margin */
+}

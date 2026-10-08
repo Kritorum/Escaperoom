@@ -1,0 +1,109 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    margin-bottom: 1.5vw; /* 20px in vw */
+    font-size: 2vw; /* 40px in vw */
+}
+.story {
+    background-color: #222;
+    padding: 1vw; /* 15px in vw */
+    border-radius: 5px;
+    margin-bottom: 1vw; /* 20px in vw */
+    width: 39vw; /* 400px in vw */
+    text-align: center;
+}
+.puzzle-container {
+    background-color: #333;
+    padding: 1.5vw; /* 20px in vw */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 2vw; /* 20px in vw */
+    width: 40vw; /* 400px in vw */
+}
+input[type="text"] {
+    padding: 0.6vw; /* 10px in vw */
+    font-size: 1.1vw; /* 16px in vw */
+    margin-bottom: 2vw; /* 20px in vw */
+    border: none;
+    border-radius: 5px;
+    width: 40%; /* Vollständige Breite */
+    box-sizing: border-box; /* Padding in die Breite einbeziehen */
+}
+button {
+    padding: 0.6vw 1.3vw; /* 10px 20px in vw */
+    font-size: 1.1vw; /* 16px in vw */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5vw; /* 5px in vw */
+}
+button:hover {
+    background-color: #45a049;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 2vw; /* 20px in vw */
+    border: 1px solid #888;
+    width: 30vw; /* 300px in vw */
+    border-radius: 10px;
+    text-align: center;
+}
+.result {
+    font-size: 2vw; /* 24px in vw */
+    font-weight: bold; /* Fettdruck */
+    margin: 1vw 0; /* 10px in vw */
+}
+.correct {
+    color: #4CAF50; /* Grüne Farbe für richtig */
+}
+.incorrect {
+    color: #f44336; /* Rote Farbe für falsch */
+}
+.separator {
+    border-top: 1px solid #888;
+    margin: 1vw 0; /* 10px in vw */
+    width: 100%;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.5vw; /* 28px in vw */
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw; /* 10px in vw */
+}

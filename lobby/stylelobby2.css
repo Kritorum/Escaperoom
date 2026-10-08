@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+  }
+
+  header {
+    background-color: #333;
+    padding: 2vw; /* Responsive padding */
+    text-align: center;
+    font-family: Monospace; /* Schriftart ändern */
+    font-size: 2vw; /* Responsive font size */
+    color: #f0f0f0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidebar {
+    background-color: #444;
+    width: 40vw; /* Responsive width */
+    max-width: 350px;
+    padding: 2vw; /* Responsive padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center buttons */
+    gap: 1.2vw; /* Responsive gap */
+  }
+
+  .sidebar button {
+    background-color: #555;
+    color: #f0f0f0;
+    border: none;
+    padding: 0.8vw; /* Reduziertes Padding */
+    cursor: pointer;
+    text-align: center;
+    border-radius: 2vw;
+    width: 80%; /* Responsive width */
+    font-size: 1.2vw; /* Reduzierte Schriftgröße */
+  }
+
+  .sidebar button:hover {
+    background-color: #666;
+  }
+
+  .main-content {
+    flex-grow: 1;
+    padding: 2vw; /* Responsive padding */
+    background-color: #2e2e2e;
+    min-height: 100vh;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .container-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Vier Boxen in einer Reihe */
+    justify-items: center; /* Zentriert die Boxen auf der X-Achse */
+    gap: 2vw; /* Responsive gap */
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .box {
+    margin-top: 10%;
+    background-color: #555;
+    background-size: cover;
+    background-position: center;
+    padding: 1vw; /* Reduziertes Padding */
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    height: 180px; /* Reduzierte Höhe */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s;
+    width: 80%; /* Breite der Boxen */
+  }
+
+
+  #aufgaben.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+
+  .box:hover {
+    transform: translateY(-5px);
+  }
+
+  .box-title {
+    position: absolute;
+    top: 5px; /* Reduziertes Padding */
+    left: 5px; /* Reduziertes Padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f0f0f0;
+    padding: 3px 5px; /* Reduziertes Padding */
+    border-radius: 5px;
+    font-size: 1.2vw; /* Reduzierte Schriftgröße */
+  }
+
+
+
+
+  
+  .overlay {
+    display: none; /* Versteckt am Anfang */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stil für das Popup-Fenster */
+.popup {
+    background: rgb(74, 70, 70);
+    border-radius: 10px;
+    width: 50vw;
+    height: 30vw;
+    padding: 1.2vw;
+    position: relative;
+}
+
+/* Schließen-Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+

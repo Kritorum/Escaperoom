@@ -1,0 +1,49 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registrierung</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginFormContainer');
+            const registerForm = document.getElementById('registerFormContainer');
+            if (loginForm.style.display === 'none') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+
+
+    <div class="container">
+        <div id="loginFormContainer">
+            <h2>Anmelden</h2>
+            <?php if (isset($error)): ?>
+                <p style="color: red;"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <form action="auth.php" method="post">
+                <input type="text" name="username" placeholder="Benutzername" required>
+                <input type="password" name="password" placeholder="Passwort" required>
+                <button type="submit" name="login">Anmelden</button>
+                <p>Noch kein Konto? <b onclick="toggleForms()">Registrieren</b></p>
+            </form>
+        </div>
+
+        <div id="registerFormContainer" style="display: none;">
+            <h2>Registrieren</h2>
+            <form action="auth.php" method="post">
+                <input type="text" name="username" placeholder="Benutzername" required>
+                <input type="password" name="password" placeholder="Passwort" required>
+                <button type="submit" name="register">Registrieren</button>
+                <p>Bereits ein Konto? <b onclick="toggleForms()">Login</b></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

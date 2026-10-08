@@ -1,0 +1,133 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 2vh; /* Verwendung von vh für responsives Margin */
+}
+.story {
+    background-color: #222;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border-radius: 5px;
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 600px; /* Maximale Breite */
+    text-align: center;
+}
+.puzzle-container {
+    background-color: #333;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 600px; /* Maximale Breite */
+}
+input[type="text"] {
+    padding: 1.2vh; /* Verwendung von vh für Padding */
+    font-size: 1.02vw; /* Verwendung von vw für Schriftgröße */
+    margin-bottom: 2vh; /* Verwendung von vh für Margin */
+    border: none;
+    border-radius: 5px;
+    width: 40%; /* Breite auf 40% gesetzt */
+    max-width: 300px; /* Maximale Breite */
+}
+button {
+    padding: 1.2vh 1.2vw; /* Verwendung von vh und vw für Padding */
+    font-size: 1.1vw; /* Verwendung von vw für Schriftgröße */
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1vh; /* Verwendung von vh für Margin */
+}
+button:hover {
+    background-color: #45a049;
+}
+.message {
+    margin-top: 2vh; /* Verwendung von vh für Margin */
+}
+.inventory {
+    position: fixed;
+    bottom: 2vh; /* Verwendung von vh für Position */
+    left: 2vw; /* Verwendung von vw für Position */
+    background-color: #444;
+    padding: 1vh; /* Verwendung von vh für Padding */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.inventory-item {
+    margin-right: 1vw; /* Abstand zwischen Inventar-Elementen */
+    font-size: 1.02vw; /* Verwendung von vw für Schriftgröße */
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-content {
+    background-color: #333;
+    margin: 15% auto;
+    padding: 2vh; /* Verwendung von vh für Padding */
+    border: 1px solid #888;
+    width: 80%; /* Breite auf 80% gesetzt */
+    max-width: 500px; /* Maximale Breite */
+    border-radius: 10px;
+    text-align: center;
+}
+.result {
+    font-size: 2vw; /* Verwendung von vw für Schriftgröße */
+    font-weight: bold; /* Fettdruck */
+    margin: 2vh 0; /* Verwendung von vh für Margin */
+}
+.correct {
+    color: #4CAF50; /* Grüne Farbe für richtig */
+}
+.incorrect {
+    color: #f44336; /* Rote Farbe für falsch */
+}
+#modalMessage {
+    font-size: 1.02vw; /* Verwendung von vw für Schriftgröße */
+}
+.separator {
+    border-top: 1px solid #888;
+    margin: 2vh 0; /* Verwendung von vh für Margin */
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 1.5vw; /* Verwendung von vw für Schriftgröße */
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Zentrierung des Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh; /* Verwendung von vh für Margin */
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farbcode entschlüsseln</title>
+    <link rel="stylesheet" href="Farbcode.css">
+</head>
+<body>
+
+    <h1>Farbcode entschlüsseln</h1>
+    
+    <div class="story">
+        <p>Eine digitale Anzeige zeigt mehrere Farbwerte an. Diese scheinen eine Botschaft zu verbergen. Entschlüssele die Farben, um den versteckten Hinweis zu entdecken!</p>
+    </div>
+
+    <div class="color-list">
+        <div>
+            <div class="color-box" style="background-color: #FF5733;"></div>
+            <div class="color-code">#FF5733</div>
+        </div>
+        <div>
+            <div class="color-box" style="background-color: #1E90FF;"></div>
+            <div class="color-code">#1E90FF</div>
+        </div>
+        <div>
+            <div class="color-box" style="background-color: #32CD32;"></div>
+            <div class="color-code">#32CD32</div>
+        </div>
+    </div>
+
+    <input type="text" id="userInput" placeholder="Gib die entschlüsselten Buchstaben ein">
+    <button onclick="checkAnswer()">Überprüfen</button>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div>
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="goBack()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="inventory">
+        <span class="inventory-item" id="inventory">Inventar: </span>
+    </div>
+
+    <script src="Farbcode.js"></script>
+
+</body>
+</html>

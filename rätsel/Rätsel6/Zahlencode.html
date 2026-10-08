@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahlencode knacken</title>
+    <link rel="stylesheet" href="Zahlencode.css">
+</head>
+<body>
+
+    <h1>Zahlencode knacken</h1>
+    <div class="story">
+        <p>Die Tür ist durch ein Rätsel gesichert. Eine Zahlenreihe erscheint auf dem Bildschirm, aber eine Zahl fehlt. Finde das Muster und trage die richtige Zahl ein, um das Schloss zu knacken!</p>
+    </div>
+
+    <div class="puzzle-container">
+        <p>Die Zahlenreihe lautet: <strong>3, 5, 8, 13, ?</strong></p>
+        <input type="text" id="numberInput" placeholder="Gib die fehlende Zahl ein">
+        <button onclick="checkCode()">Überprüfen</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div> <!-- Trennstrich für das Ergebnis -->
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="closeModal()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Zahlencode.js"></script>
+
+</body>
+</html>

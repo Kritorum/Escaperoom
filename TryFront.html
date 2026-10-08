@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Escape-Room</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="TryStyle.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ 
+ 
+    </head>
+    <body>
+        <!-- Navigationsbar die immer oben zu sehen ist (beim scrollen) -->
+        <nav class="navbar sticky-top navbar-expand-lg bg-body-dark p3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5zM15 4.239l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"/>
+                </svg>    
+                <p class="logoS">Escape-Room</p></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+ 
+			<!-- Menü (funktioniert iwie noch net)--> 
+                <div class="dropdown">
+                    <button class="btn btn-secondary btna" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+							<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+						</svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Fortschritt</a></li>
+                      <li><a class="dropdown-item" href="#">Homepage</a></li>
+                    </ul>
+                  </div>
+ 
+<!-- Anmeldung/Registrierung/Abmeldung -->	
+<div class="container-login">
+    <div class="dropdown">
+        <button id="loginButton" class="round-button" onclick="toggleDropdown()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+            </svg>
+        </button>
+        <div class="dropdown-content" id="dropdownMenu" style="display: none;">
+            <a href="account-settings.html">Account Einstellungen</a>
+            <a href="logout.php">Abmelden</a>
+        </div>
+    </div>
+</div>
+
+
+ 
+    </nav> 
+ 
+        <!-- Hintergrund-Container für oben --> 
+        <div class="top">
+            <img src="https://images7.alphacoders.com/134/1349474.png" class="d-block w-100 imgTop" alt="Escape Room">
+            <p class="titleP">Escape Room </p>
+        </div>
+ 
+        <div class="bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-up arrow" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M7.776 5.553a.5.5 0 0 1 .448 0l6 3a.5.5 0 1 1-.448.894L8 6.56 2.224 9.447a.5.5 0 1 1-.448-.894z"/>
+            </svg>
+ 
+            <!-- Container in dem Bild und Karte neben Bild ist -->
+            <div class="card" style="width: 80%;">
+                <!-- Karte neben Bild -->
+                <div class="card-body">
+                    <!-- Überschrift Karte -->
+                    <h3 class="card-title">Der Hausmeister</h3>
+                    <!-- Icon Uhr -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                    </svg>
+                    <!-- Personen Anzahl -->
+                    <p class="pIcons">1-5</p>
+                    <!-- Icon Personen -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                    </svg>
+                    <!-- Stunden Anzahl -->
+                    <p class="pIcons">3h</p>
+                    <!-- Beschreibung Escape-Room -->
+                    <p class="card-text">Stell dir vor, du wachst allein in deiner Schule auf – der Hausmeister draußen begeht einen Mord, und jetzt hat er dich gesehen! Ohne Handy und ohne Ausweg beginnt ein gnadenloses Katz-und-Maus-Spiel. <br>Du musst knifflige Rätsel lösen, die Technik der Schule hacken und cleverer sein als dein Verfolger. <br>Kannst du dem Wahnsinn entkommen, bevor er dich findet? <br>Teste deine Fähigkeiten und wage dich in den ultimativen Escape Room!</p>
+                    <!-- Button zu Escape-Room -->
+                    <a href="lobby.html" class="btn btn-primary btnb">Escape-Room</a>
+                </div>
+                <!-- Bild zum Escape-Room (gerade nur Beispiel Bild) -->
+                <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1729790/ss_1fd32d3e8fb4c9c0cb1920113db004db2f10e118.1920x1080.jpg?t=1651141362" class="card-img-top" alt="Beispiel Bild">
+            </div> 
+ 
+            <div class="accordion" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Worum geht es?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Wie ist der Escape-Room aufgebaut?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Wie kann ich mit mehreren Personen spielen?
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+ 
+	<script src="TryScript.js"></script>
+	</body>
+</html>

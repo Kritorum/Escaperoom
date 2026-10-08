@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm-Code</title>
+    <link rel="stylesheet" href="Alarm-Code.css">
+</head>
+<body>
+    <h1>Alarm-Code knacken</h1>
+    <div class="story" id="story">
+        <p>Du stehst vor der verschlossenen Tür eines Klassenzimmers. Auf einem Monitor wird ein Binärcode angezeigt. Du musst den Code knacken, um die Tür zu öffnen und das Geheimnis zu lüften, das sich dahinter verbirgt.</p>
+    </div>
+
+    <div class="puzzle-container">
+        <p>Um die Tür zu öffnen, musst du den Alarm deaktivieren.</p>
+        <p>Binärcode: <strong id="binaryCode">101101</strong></p>
+        <input type="text" id="userInput" placeholder="Gib den Dezimalcode ein">
+        <button onclick="checkCode()">Überprüfen</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <div class="inventory">
+        <span class="inventory-item" id="inventory">Inventar: </span>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeButton" style="display: none;" onclick="closeModal()">&times;</span>
+            <div id="resultMessage" class="result"></div>
+            <div class="separator"></div>
+            <p id="modalMessage"></p>
+            <div class="separator" id="separator" style="display: none;"></div> <!-- Nur für falsches Ergebnis -->
+            <div class="button-container">
+                <button id="backButton" style="display: none;" onclick="goBack()">Weiter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Alarm-Code.js"></script>
+
+</body>
+</html>
